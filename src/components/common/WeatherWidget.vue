@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import WeatherView from '@/components/WeatherView.vue'
-import SettingsView from '@/components/SettingsView.vue'
+import WeatherView from '@/components/common/WeatherView.vue'
+import SettingsView from '@/components/common/SettingsView.vue'
 
 export default {
   name: 'WeatherWidget',
@@ -37,14 +37,24 @@ export default {
     }
   },
 
+  created () {
+    this.locations = JSON.parse(localStorage.getItem('widget-weather-locations')) || []
+  },
+
   methods: {
     addLocation (location) {
       this.locations.push(location)
+      this.saveData()
     },
 
     removeLocation (id) {
       const index = this.locations.findIndex(el => el.id === id)
       this.locations.splice(index, 1)
+      this.saveData()
+    },
+
+    saveData () {
+      localStorage.setItem('widget-weather-locations', JSON.stringify(this.locations))
     }
   }
 }
@@ -57,7 +67,7 @@ export default {
     left: $gap;
     display: flex;
     flex-direction: column;
-    width: 30rem;
+    width: 25rem;
     min-height: 30rem;
     padding: $gap-sm;
     box-shadow: $box-shadow;

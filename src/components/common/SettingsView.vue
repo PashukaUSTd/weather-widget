@@ -17,7 +17,7 @@
           <svg-icon name="menu" :class="$style.drag" />
 
           <h3>
-            {{ location.name }}
+            {{ location.name }}, {{ location.sys.country }}
           </h3>
 
           <IconButton
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import WidgetHeader from '@/components/WidgetHeader.vue'
+import WidgetHeader from '@/components/common/WidgetHeader.vue'
 import IconButton from '@/components/ui/IconButton.vue'
 import VInput from '@/components/ui/VInput.vue'
 

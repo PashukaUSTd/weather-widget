@@ -6,7 +6,7 @@
 
 <script>
 
-import WeatherWidget from '@/components/WeatherWidget.vue'
+import WeatherWidget from '@/components/common/WeatherWidget.vue'
 
 export default {
   name: 'App',
