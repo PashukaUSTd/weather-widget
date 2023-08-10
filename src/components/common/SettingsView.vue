@@ -5,11 +5,12 @@
     />
 
     <transition name="fade" mode="out-in">
-      <ul
+      <draggable
         v-if="locations.length"
-        :class="$style.list"
+        v-model="locations"
+        :class="[$style.list, 'scrollable-container']"
       >
-        <li
+        <div
           v-for="location in locations"
           :key="location.id"
           :class="$style.location"
@@ -25,8 +26,8 @@
             :class="$style.remove"
             @click="$emit('remove-location', location.id)"
           />
-        </li>
-      </ul>
+        </div>
+      </draggable>
 
       <p
         v-else
@@ -65,14 +66,15 @@
 import WidgetHeader from '@/components/common/WidgetHeader.vue'
 import IconButton from '@/components/ui/IconButton.vue'
 import VInput from '@/components/ui/VInput.vue'
+import draggable from 'vuedraggable'
 
 export default {
   name: 'SettingsView',
 
-  components: { VInput, IconButton, WidgetHeader },
+  components: { VInput, IconButton, WidgetHeader, draggable },
 
   props: {
-    locations: {
+    initLocations: {
       type: Array,
       default: () => []
     }
@@ -80,9 +82,20 @@ export default {
 
   data () {
     return {
+      locations: [...this.initLocations],
       value: '',
       error: false,
       errorText: ''
+    }
+  },
+
+  watch: {
+    locations (val) {
+      this.$emit('change-locations', val)
+    },
+
+    initLocations (val) {
+      this.locations = val
     }
   },
 
@@ -122,7 +135,7 @@ export default {
 
   .list {
     overflow-y: auto;
-    max-height: 40rem;
+    max-height: 25rem;
   }
 
   .location {

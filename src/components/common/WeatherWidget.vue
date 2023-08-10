@@ -1,5 +1,8 @@
 <template>
-  <div :class="$style.WeatherWidget">
+  <div
+    :class="[$style.WeatherWidget, 'scrollable-container']"
+    :style="styles"
+  >
     <transition name="fade" mode="out-in">
       <WeatherView
         v-if="view === 'weather'"
@@ -9,10 +12,11 @@
 
       <SettingsView
         v-else
-        :locations="locations"
+        :init-locations="locations"
         @add-location="addLocation"
         @remove-location="removeLocation"
         @close-settings="view = 'weather'"
+        @change-locations="onChangeLocations"
       />
     </transition>
   </div>
@@ -33,7 +37,8 @@ export default {
   data () {
     return {
       view: 'weather',
-      locations: []
+      locations: [],
+      styles: {}
     }
   },
 
@@ -42,6 +47,11 @@ export default {
   },
 
   methods: {
+    onChangeLocations (locations) {
+      this.locations = locations
+      this.saveData()
+    },
+
     addLocation (location) {
       this.locations.push(location)
       this.saveData()
@@ -65,11 +75,14 @@ export default {
     position: fixed;
     top: $gap;
     left: $gap;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     width: 25rem;
     min-height: 30rem;
+    max-height: 50rem;
     padding: $gap-sm;
     box-shadow: $box-shadow;
+    transition: transform $default-transition;
   }
 </style>

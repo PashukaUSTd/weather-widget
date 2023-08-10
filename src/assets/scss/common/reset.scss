@@ -61,3 +61,24 @@ h6 {
     font-size: initial;
     font-weight: normal;
 }
+
+.scrollable-container {
+    /* полоса прокрутки (скроллбар) */
+    &::-webkit-scrollbar {
+        width: 4px; /* ширина для вертикального скролла */
+        height: 4px; /* высота для горизонтального скролла */
+        padding-top: 10px;
+        background-color: transparent;
+    }
+
+    /* ползунок скроллбара */
+    &::-webkit-scrollbar-thumb {
+        background-color: $base-400;
+        border-radius: 9em;
+        box-shadow: inset 1px 1px 10px #f3faf7;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $base-300;
+    }
+}

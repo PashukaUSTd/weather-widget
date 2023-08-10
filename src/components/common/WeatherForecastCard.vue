@@ -139,7 +139,7 @@ export default {
 
   .option {
     width: 50%;
-    margin-bottom: $gap-sm;
+    margin-bottom: $gap-tinny;
     font-size: 1rem;
   }
 </style>
