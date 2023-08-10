@@ -1,0 +1,28 @@
+$breakpoints: (
+    mobile: 767px,
+    tablet: 1280px,
+    laptop: 1440px,
+    desktop: 9999px,
+);
+
+// grid
+$gap: 2.4rem;
+$gap-m: 2rem;
+$gap-sm: 1.2rem;
+$gap-tinny: .8rem;
+
+// styles
+$box-shadow: 0px 0px 34px 16px rgba(209,207,209,0.89);
+
+//colors
+$base-300: #e3e3e3;
+$base-400: #a7a7a7;
+$base-900: #0d0606;
+$aqua: #d51ce6;
+$error: #e61c3e;
+
+// transitions
+$default-transition: .3s ease;
+
+// borders
+$border-radius: .2rem;

@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 10px;
+
+    @include respond-to(laptop) {
+        font-size: .6944vw; // font-size: 10px -> 8.89583px
+    }
+
+    @include respond-to(tablet) {
+        font-size: 10px;
+    }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+pre,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-size: initial;
+    font-weight: normal;
+}
