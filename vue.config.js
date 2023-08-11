@@ -1,5 +1,12 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
+  configureWebpack: {
+    mode: 'production',
+    output: {
+      libraryExport: 'default'
+    }
+  },
+
   chainWebpack: config => {
     config.module
       .rule('svg-sprite')
