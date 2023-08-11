@@ -1,11 +1,8 @@
 <template>
-  <div id="app">
-    <WeatherWidget />
-  </div>
+  <WeatherWidget />
 </template>
 
 <script>
-
 import WeatherWidget from '@/components/common/WeatherWidget.vue'
 
 export default {
@@ -17,5 +14,6 @@ export default {
 }
 </script>
 
-<style src="./weather-widget-rakhmukov.css" scoped>
+<style lang="scss">
+  //
 </style>

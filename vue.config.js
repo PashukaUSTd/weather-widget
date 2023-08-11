@@ -1,7 +1,10 @@
+const path = require('path')
 const { defineConfig } = require('@vue/cli-service')
+
 module.exports = defineConfig({
   configureWebpack: {
     mode: 'production',
+
     output: {
       library: 'WeatherWidget',
       libraryExport: 'default'
@@ -13,6 +16,8 @@ module.exports = defineConfig({
       .rule('svg-sprite')
       .use('svgo-loader')
       .loader('svgo-loader')
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    types.forEach(type => addStyleResource(config.module.rule('stylus').oneOf(type)))
   },
 
   transpileDependencies: true,
@@ -39,7 +44,6 @@ module.exports = defineConfig({
        * @see https://github.com/kisenka/svg-sprite-loader#configuration
        */
       loaderOptions: {
-        extract: true,
         spriteFilename: 'img/icons.[hash:8].svg' // or 'img/icons.svg' if filenameHashing == false
       },
       /*
@@ -51,3 +55,13 @@ module.exports = defineConfig({
     }
   }
 })
+
+function addStyleResource (rule) {
+  rule.use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [
+        path.resolve(__dirname, './src/styles/imports.styl')
+      ]
+    })
+}

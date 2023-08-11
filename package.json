@@ -1,6 +1,6 @@
 {
   "name": "weather-widget-rakhmukov",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "dist/weather-widget-rakhmukov.common.js",
   "module": "dist/weather-widget-rakhmukov.common.js",
   "browser": "dist/weather-widget-rakhmukov.umd.min.js",
@@ -24,6 +24,7 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-standard": "^6.1.0",
+    "css-loader": "^6.8.1",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
@@ -31,6 +32,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
+    "style-loader": "^3.3.3",
     "svgo": "^1.1.0",
     "svgo-loader": "^2.1.0",
     "vue-cli-plugin-svg-sprite": "~1.1.0",

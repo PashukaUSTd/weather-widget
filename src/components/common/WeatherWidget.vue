@@ -95,6 +95,7 @@ export default {
     min-height: 30rem;
     max-height: 50rem;
     padding: $gap-sm;
+    background-color: $base-0;
     box-shadow: $box-shadow;
     transition: transform $default-transition;
   }
