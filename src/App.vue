@@ -17,6 +17,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style src="../dist/weather-widget-rakhmukov.css" scoped>
   //
 </style>
