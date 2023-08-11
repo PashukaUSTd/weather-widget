@@ -42,8 +42,9 @@ export default {
     }
   },
 
-  created () {
+  async created () {
     this.locations = JSON.parse(localStorage.getItem('widget-weather-locations')) || []
+    this.locations = await this.updateData()
   },
 
   methods: {
@@ -53,8 +54,14 @@ export default {
     },
 
     addLocation (location) {
-      this.locations.push(location)
-      this.saveData()
+      if (!this.checkDublicates(location)) {
+        this.locations.push(location)
+        this.saveData()
+      }
+    },
+
+    checkDublicates (location) {
+      return this.locations.find(el => el.id === location.id)
     },
 
     removeLocation (id) {
@@ -65,6 +72,13 @@ export default {
 
     saveData () {
       localStorage.setItem('widget-weather-locations', JSON.stringify(this.locations))
+    },
+
+    updateData () {
+      return Promise.all(this.locations.map(el => {
+        return this.axios.get(this.$api.weather.searchWeather(el.coord.lat, el.coord.lon))
+          .then(res => res.data)
+      }))
     }
   }
 }
@@ -73,8 +87,7 @@ export default {
 <style lang="scss" module>
   .WeatherWidget {
     position: fixed;
-    top: $gap;
-    left: $gap;
+    z-index: 1000;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
