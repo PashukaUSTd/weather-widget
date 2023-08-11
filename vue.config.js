@@ -3,6 +3,7 @@ module.exports = defineConfig({
   configureWebpack: {
     mode: 'production',
     output: {
+      library: 'WeatherWidget',
       libraryExport: 'default'
     }
   },
