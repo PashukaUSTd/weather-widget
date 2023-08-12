@@ -14,6 +14,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style src="./assets/scss/bundle.scss" lang="scss">
   //
 </style>
