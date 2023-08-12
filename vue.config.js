@@ -1,20 +1,20 @@
 const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
-  configureWebpack: {
-    mode: 'production',
-
-    output: {
-      library: 'WeatherWidget',
-      libraryExport: 'default'
-    }
-  },
-
   chainWebpack: config => {
     config.module
       .rule('svg-sprite')
       .use('svgo-loader')
       .loader('svgo-loader')
+
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule
+      .use('babel-loader')
+      .loader('babel-loader')
+      .end()
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader');
   },
 
   transpileDependencies: true,
@@ -48,7 +48,7 @@ module.exports = defineConfig({
        * @see https://github.com/kisenka/svg-sprite-loader#configuration
        */
       pluginOptions: {
-        plainSprite: true
+        plainSprite: false
       }
     }
   }

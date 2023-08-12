@@ -1,5 +1,7 @@
 <template>
-  <WeatherWidget />
+  <div id="app">
+    <WeatherWidget />
+  </div>
 </template>
 
 <script>

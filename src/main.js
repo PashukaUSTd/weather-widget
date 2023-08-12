@@ -22,4 +22,4 @@ Vue.prototype.$api = api
 
 new Vue({
   render: h => h(App)
-}).$mount('#weather-widget')
+}).$mount('#app')

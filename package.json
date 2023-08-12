@@ -1,6 +1,6 @@
 {
   "name": "weather-widget-rakhmukov",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "dist/weather-widget-rakhmukov.common.js",
   "module": "dist/weather-widget-rakhmukov.common.js",
   "browser": "dist/weather-widget-rakhmukov.umd.min.js",
@@ -33,9 +33,11 @@
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "style-loader": "^3.3.3",
+    "svg-sprite-html-webpack": "^2.4.1",
     "svgo": "^1.1.0",
     "svgo-loader": "^2.1.0",
     "vue-cli-plugin-svg-sprite": "~1.1.0",
-    "vue-template-compiler": "^2.6.14"
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.7.14"
   }
 }
