@@ -1,11 +1,13 @@
 <template>
-  <svg :class="className" xmlns="http://www.w3.org/2000/svg">
-    <title v-if="title">{{ title }}</title>
-    <use :xlink:href="iconPath" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-  </svg>
+<!--  <svg :class="className" xmlns="http://www.w3.org/2000/svg">-->
+<!--    <title v-if="title">{{ title }}</title>-->
+<!--    <use :xlink:href="icon" xmlns:xlink="http://www.w3.org/1999/xlink"/>-->
+<!--  </svg>-->
+  <div v-html="icon" :class="className"></div>
 </template>
 
 <script>
+
 export default {
   name: 'svg-icon',
 
@@ -22,13 +24,14 @@ export default {
   },
 
   computed: {
-    iconPath () {
-      let icon = require(`@/assets/svg/${this.name}.svg`)
-      if (Object.prototype.hasOwnProperty.call(icon, 'default')) {
-        icon = icon.default
-      }
+    icon () {
+      const icon = require(`@/assets/svg/${this.name}.svg`)
 
-      return icon.url
+      // if (Object.prototype.hasOwnProperty.call(icon, 'default')) {
+      //   icon = icon.default
+      // }
+
+      return icon
     },
 
     className () {

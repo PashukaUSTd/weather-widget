@@ -7,7 +7,7 @@
   "unpkg": "dist/weather-widget-rakhmukov.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target wc --name weather-widget-rakhmukov",
+    "build": "vue-cli-service build --target wc --name weather-widget-rakhmukov 'src/App.vue'",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -33,11 +33,6 @@
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "style-loader": "^3.3.3",
-    "svg-sprite-html-webpack": "^2.4.1",
-    "svgo": "^1.1.0",
-    "svgo-loader": "^2.1.0",
-    "vue-cli-plugin-svg-sprite": "~1.1.0",
-    "vue-svg-loader": "^0.16.0",
-    "vue-template-compiler": "^2.7.14"
+    "svg-inline-loader": "^0.8.2"
   }
 }
