@@ -14,6 +14,6 @@ export default {
 }
 </script>
 
-<style src="./assets/scss/bundle.scss" lang="scss" scoped>
+<style src="./assets/scss/bundle.scss" lang="scss">
   //
 </style>

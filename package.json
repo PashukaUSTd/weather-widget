@@ -1,6 +1,6 @@
 {
   "name": "weather-widget-rakhmukov",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "dist/weather-widget-rakhmukov.common.js",
   "module": "dist/weather-widget-rakhmukov.common.js",
   "browser": "dist/weather-widget-rakhmukov.umd.min.js",
