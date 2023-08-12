@@ -1,15 +1,15 @@
 <template>
-    <label :class="[$style.VInput, {[$style._error]: error}]">
-      <span :class="$style.label">
-        {{ error ? errorText : label }}
-      </span>
+  <label :class="[$style.VInput, {[$style._error]: error}]">
+    <span :class="$style.label">
+      {{ error ? errorText : label }}
+    </span>
 
-      <input
-        :value="value"
-        :class="$style.input"
-        @input="$emit('input', $event.target.value)"
-      >
-    </label>
+    <input
+      :value="value"
+      :class="$style.input"
+      @input="$emit('input', $event.target.value)"
+    >
+  </label>
 </template>
 
 <script>

@@ -1,7 +1,5 @@
 <template>
   <div :class="$style.WeatherView">
-    <h2>new version</h2>
-
     <IconButton
       :class="$style.button"
       icon-name="settings"

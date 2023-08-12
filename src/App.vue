@@ -6,12 +6,27 @@
 
 <script>
 import WeatherWidget from '@/components/common/WeatherWidget.vue'
+import SvgIcon from '@/components/images/SvgIcon.vue'
+import Vue from 'vue'
+
+// import axios
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+// import api
+import api from '@/api/api'
 
 export default {
   name: 'App',
 
   components: {
     WeatherWidget
+  },
+
+  created () {
+    Vue.component('SvgIcon', SvgIcon)
+    Vue.use(VueAxios, axios)
+    Vue.prototype.$api = api
   }
 }
 </script>
