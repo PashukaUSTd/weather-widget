@@ -1,10 +1,10 @@
 {
   "name": "weather-widget-rakhmukov",
   "version": "0.2.4",
-  "main": "dist/weather-widget-rakhmukov.common.js",
-  "module": "dist/weather-widget-rakhmukov.common.js",
-  "browser": "dist/weather-widget-rakhmukov.umd.min.js",
-  "unpkg": "dist/weather-widget-rakhmukov.umd.min.js",
+  "main": "dist/weather-widget-rakhmukov.min.js",
+  "module": "dist/weather-widget-rakhmukov.min.js",
+  "browser": "dist/weather-widget-rakhmukov.min.js",
+  "unpkg": "dist/weather-widget-rakhmukov.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target wc --name weather-widget-rakhmukov 'src/App.vue'",
