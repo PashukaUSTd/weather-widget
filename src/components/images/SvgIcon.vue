@@ -1,5 +1,5 @@
 <template>
-  <div v-html="icon" :class="className"></div>
+  <span v-html="icon" :class="className"></span>
 </template>
 
 <script>
@@ -21,13 +21,7 @@ export default {
 
   computed: {
     icon () {
-      const icon = require(`@/assets/svg/${this.name}.svg`)
-
-      // if (Object.prototype.hasOwnProperty.call(icon, 'default')) {
-      //   icon = icon.default
-      // }
-
-      return icon
+      return require(`@/assets/svg/${this.name}.svg`)
     },
 
     className () {
@@ -39,6 +33,7 @@ export default {
 
 <style>
   .svg-icon {
+    display: inline-block;
     fill: currentColor;
     height: 1.6rem;
     width: 1.6rem;
